@@ -1,2 +1,12 @@
 django
 pandas
+datetime
+pickle
+os.path
+googleapiclient.discovery
+google_auth_oauthlib.flow
+google.auth.transport.requests
+apscheduler
+time
+twilio.rest
+os

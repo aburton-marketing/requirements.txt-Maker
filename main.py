@@ -5,7 +5,7 @@ import re
 def main():
     # Walking all the directories and finding all the
     # .py extended files
-    subDirs = [x[0] for x in os.walk('Demo')]
+    subDirs = [x[0] for x in os.walk('../WhatsApp-Reminder-BOT')]
 
     finalLibrary = []
     pythonFileNames = []
@@ -28,28 +28,25 @@ def main():
 
         currentLibrary = f.readlines()
 
-
         for z in currentLibrary:
             z = z.strip()
             z = z.strip("\\n")
 
-
-
             if "import" in z or "from" in z:
-                theStrWord= z.strip()
+                theStrWord = z.strip()
                 currentLibraryList.append(theStrWord)
 
         f.close()
 
-
     for i in range(len(currentLibraryList)):
         if currentLibraryList[i].split()[0] == "import" or currentLibraryList[i].split()[0] == "from":
-            if currentLibraryList[i].split()[1] not in finalLibrary and currentLibraryList[i].split()[1] not in pythonFileNames:
+            if currentLibraryList[i].split()[1] not in finalLibrary and currentLibraryList[i].split()[
+                1] not in pythonFileNames:
                 finalLibrary.append(currentLibraryList[i].split()[1])
-
 
     print(finalLibrary)
     return finalLibrary
+
 
 # Creating a new requirements.txt file and writing down all the libraries
 def writingRequirement(finalLibrary):
