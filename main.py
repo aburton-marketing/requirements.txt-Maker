@@ -5,7 +5,7 @@ import re
 def main():
     # Walking all the directories and finding all the
     # .py extended files
-    subDirs = [x[0] for x in os.walk('../WhatsApp-Reminder-BOT')]
+    subDirs = [x[0] for x in os.walk('Demo')]
 
     finalLibrary = []
     pythonFileNames = []
